@@ -119,6 +119,7 @@ endclass
 
 //---------------------------------------------------------------------------
 // Testcase-4: wo_reg_prot_test
+// (Apply this test to verify all the reg-field access policy)
 //---------------------------------------------------------------------------
 class wo_reg_prot_test extends apb_base_test;
     
@@ -176,7 +177,7 @@ class field_level_test extends apb_base_test;
 endclass
 
 //---------------------------------------------------------------------------
-// Testcase-6: reg_mirror_test  //TODO
+// Testcase-6: reg_mirror_test
 //---------------------------------------------------------------------------
 class reg_mirror_test extends apb_base_test;
     

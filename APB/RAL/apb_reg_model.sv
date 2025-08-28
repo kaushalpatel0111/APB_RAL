@@ -15,7 +15,7 @@ class cntrl_reg extends uvm_reg;
    
     virtual function void build();
         cntrl     = uvm_reg_field::type_id::create("cntrl");
-        cntrl.configure(this, 4, 0, "RW", 0, 4'h0, 1, 1, 1);
+        cntrl.configure(this, 4, 0, "RW", 1, 4'h0, 1, 1, 1);
     endfunction 
  
 endclass
@@ -34,7 +34,7 @@ class reg1_reg extends uvm_reg;
    
     virtual function void build();
         reg1     = uvm_reg_field::type_id::create("reg1");
-        reg1.configure(this, 32, 0, "RW", 0, 32'h0, 1, 1, 1);
+        reg1.configure(this, 32, 0, "RW", 1, 32'h0, 1, 1, 1);
     endfunction 
  
 endclass
@@ -53,7 +53,7 @@ class reg2_reg extends uvm_reg;
    
     virtual function void build();
         reg2     = uvm_reg_field::type_id::create("reg2");
-        reg2.configure(this, 32, 0, "RW", 0, 32'h0, 1, 1, 1);
+        reg2.configure(this, 32, 0, "RW", 1, 32'h0, 1, 1, 1);
     endfunction 
  
 endclass
@@ -72,7 +72,7 @@ class reg3_reg extends uvm_reg;
    
     virtual function void build();
         reg3     = uvm_reg_field::type_id::create("reg3");
-        reg3.configure(this, 32, 0, "RW", 0, 32'h0, 1, 1, 1);
+        reg3.configure(this, 32, 0, "RW", 1, 32'h0, 1, 1, 1);
     endfunction 
  
 endclass
@@ -91,7 +91,7 @@ class reg4_reg extends uvm_reg;
    
     virtual function void build();
         reg4     = uvm_reg_field::type_id::create("reg4");
-        reg4.configure(this, 32, 0, "RW", 0, 32'h0, 1, 1, 1);
+        reg4.configure(this, 32, 0, "RW", 1, 32'h0, 1, 1, 1);
     endfunction 
  
 endclass
@@ -110,7 +110,7 @@ class reg5_reg extends uvm_reg;
    
     virtual function void build();
         reg5     = uvm_reg_field::type_id::create("reg5");
-        reg5.configure(this, 32, 0, "WO", 0, 32'h0, 1, 1, 1);
+        reg5.configure(this, 32, 0, "WO", 1, 32'h0, 1, 1, 1); // Use all types of access policy in this reg_field
     endfunction 
  
 endclass
@@ -129,7 +129,7 @@ class read_tmp_reg extends uvm_reg;
    
     virtual function void build();
         read_tmp     = uvm_reg_field::type_id::create("read_tmp");
-        read_tmp.configure(this, 32, 0, "RO", 0, 32'h0, 1, 1, 1);
+        read_tmp.configure(this, 32, 0, "RO", 1, 32'h0, 1, 1, 1);
     endfunction 
  
 endclass
@@ -197,7 +197,7 @@ class apb_reg_block extends uvm_reg_block;
         default_map.add_reg(reg2_inst	, 'h8, "RW");  // reg, offset, access
         default_map.add_reg(reg3_inst	, 'hc, "RW");  // reg, offset, access
         default_map.add_reg(reg4_inst	, 'h10, "RW");  // reg, offset, access
-        default_map.add_reg(reg5_inst	, 'h14, "WO");  // reg, offset, access
+        default_map.add_reg(reg5_inst	, 'h14, "RW");  // reg, offset, access
         default_map.add_reg(rtmp_inst	, 'h18, "RO");  // reg, offset, access
 
         lock_model();

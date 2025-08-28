@@ -425,7 +425,7 @@ class field_level_access extends uvm_sequence;
     endtask 
 endclass
 
-// TODO: TC_06
+// TC_06
 class mirror_api_access extends uvm_sequence;
     `uvm_object_utils(mirror_api_access)
 
@@ -449,10 +449,6 @@ class mirror_api_access extends uvm_sequence;
         reg_block.cntrl_inst.read(status, value);
         `uvm_info("CNTRL_REG", $sformatf("[DESIRED RD_VALUE] cntrl: %h", reg_block.cntrl_inst.get()), UVM_LOW)
         `uvm_info("CNTRL_REG", $sformatf("[MIRRORED RD_VALUE] cntrl: %h", reg_block.cntrl_inst.get_mirrored_value()), UVM_LOW)
-        /*`uvm_info("CNTRL_REG", "---------USING predict() API METHOD---------", UVM_LOW)
-        reg_block.cntrl_inst.predict('hF);
-        `uvm_info("CNTRL_REG", $sformatf("[DESIRED VALUE] cntrl: %h", reg_block.cntrl_inst.get()), UVM_LOW)
-        `uvm_info("CNTRL_REG", $sformatf("[MIRRORED VALUE] cntrl: %h", reg_block.cntrl_inst.get_mirrored_value()), UVM_LOW)*/
         `uvm_info("CNTRL_REG", "---------USING mirror() API METHOD---------", UVM_LOW)
         reg_block.cntrl_inst.mirror(status, UVM_CHECK);
         `uvm_info("CNTRL_REG", $sformatf("[DESIRED VALUE] cntrl: %h", reg_block.cntrl_inst.get()), UVM_LOW)
@@ -466,10 +462,6 @@ class mirror_api_access extends uvm_sequence;
         reg_block.reg1_inst.read(status, value);
         `uvm_info("REG1", $sformatf("[DESIRED RD_VALUE] reg1: %h", reg_block.reg1_inst.get()), UVM_LOW)
         `uvm_info("REG1", $sformatf("[MIRRORED RD_VALUE] reg1: %h", reg_block.reg1_inst.get_mirrored_value()), UVM_LOW)
-        /*`uvm_info("REG1", "---------USING predict() API METHOD---------", UVM_LOW)
-        reg_block.reg1_inst.predict('hCAFE);
-        `uvm_info("REG1", $sformatf("[DESIRED VALUE] reg1: %h", reg_block.reg1_inst.get()), UVM_LOW)
-        `uvm_info("REG1", $sformatf("[MIRRORED VALUE] reg1: %h", reg_block.reg1_inst.get_mirrored_value()), UVM_LOW)*/
         `uvm_info("REG1", "---------USING mirror() API METHOD---------", UVM_LOW)
         reg_block.reg1_inst.mirror(status, UVM_CHECK);
         `uvm_info("REG1", $sformatf("[DESIRED VALUE] reg1: %h", reg_block.reg1_inst.get()), UVM_LOW)
@@ -483,10 +475,6 @@ class mirror_api_access extends uvm_sequence;
         reg_block.reg2_inst.read(status, value);
         `uvm_info("REG2", $sformatf("[DESIRED RD_VALUE] reg2: %h", reg_block.reg2_inst.get()), UVM_LOW)
         `uvm_info("REG2", $sformatf("[MIRRORED RD_VALUE] reg2: %h", reg_block.reg2_inst.get_mirrored_value()), UVM_LOW)
-        /*`uvm_info("REG2", "---------USING predict() API METHOD---------", UVM_LOW)
-        reg_block.reg2_inst.predict('hFACE);
-        `uvm_info("REG2", $sformatf("[DESIRED VALUE] reg2: %h", reg_block.reg2_inst.get()), UVM_LOW)
-        `uvm_info("REG2", $sformatf("[MIRRORED VALUE] reg2: %h", reg_block.reg2_inst.get_mirrored_value()), UVM_LOW)*/
         `uvm_info("REG2", "---------USING mirror() API METHOD---------", UVM_LOW)
         reg_block.reg2_inst.mirror(status, UVM_CHECK);
         `uvm_info("REG2", $sformatf("[DESIRED VALUE] reg2: %h", reg_block.reg2_inst.get()), UVM_LOW)
@@ -500,10 +488,6 @@ class mirror_api_access extends uvm_sequence;
         reg_block.reg3_inst.read(status, value);
         `uvm_info("REG3", $sformatf("[DESIRED RD_VALUE] reg3: %h", reg_block.reg3_inst.get()), UVM_LOW)
         `uvm_info("REG3", $sformatf("[MIRRORED RD_VALUE] reg3: %h", reg_block.reg3_inst.get_mirrored_value()), UVM_LOW)
-        /*`uvm_info("REG3", "---------USING predict() API METHOD---------", UVM_LOW)
-        reg_block.reg3_inst.predict('hFAAB);
-        `uvm_info("REG3", $sformatf("[DESIRED VALUE] reg3: %h", reg_block.reg3_inst.get()), UVM_LOW)
-        `uvm_info("REG3", $sformatf("[MIRRORED VALUE] reg3: %h", reg_block.reg3_inst.get_mirrored_value()), UVM_LOW)*/
         `uvm_info("REG3", "---------USING mirror() API METHOD---------", UVM_LOW)
         reg_block.reg3_inst.mirror(status, UVM_CHECK);
         `uvm_info("REG3", $sformatf("[DESIRED VALUE] reg3: %h", reg_block.reg3_inst.get()), UVM_LOW)
@@ -517,10 +501,6 @@ class mirror_api_access extends uvm_sequence;
         reg_block.reg4_inst.read(status, value);
         `uvm_info("REG4", $sformatf("[DESIRED RD_VALUE] reg4: %h", reg_block.reg4_inst.get()), UVM_LOW)
         `uvm_info("REG4", $sformatf("[MIRRORED RD_VALUE] reg4: %h", reg_block.reg4_inst.get_mirrored_value()), UVM_LOW)
-        /*`uvm_info("REG4", "---------USING predict() API METHOD---------", UVM_LOW)
-        reg_block.reg4_inst.predict('hFBBC);
-        `uvm_info("REG4", $sformatf("[DESIRED VALUE] reg4: %h", reg_block.reg4_inst.get()), UVM_LOW)
-        `uvm_info("REG4", $sformatf("[MIRRORED VALUE] reg4: %h", reg_block.reg4_inst.get_mirrored_value()), UVM_LOW)*/
         `uvm_info("REG4", "---------USING mirror() API METHOD---------", UVM_LOW)
         reg_block.reg4_inst.mirror(status, UVM_CHECK);
         `uvm_info("REG4", $sformatf("[DESIRED VALUE] reg4: %h", reg_block.reg4_inst.get()), UVM_LOW)
